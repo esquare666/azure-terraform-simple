@@ -10,7 +10,10 @@ variable "azure_region" {
 
 variable "cidrs" { default = ["10.0.0.0/8"] }
 
-variable "subnet_app1" { default = ["10.0.0.0/24"] }
+variable "subnet_app1" { 
+  type = string
+  default = "10.0.0.0/24"
+  }
 
 variable "tag_user_name" {
   type = string
