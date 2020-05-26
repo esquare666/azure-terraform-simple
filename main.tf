@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "main" {
   name                = var.prefix
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
-  address_space       = ["10.0.0.0/16"]
+  address_space       = var.cidr
   
    tags = {
         user_name = var.tag_user_name
