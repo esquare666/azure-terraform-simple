@@ -24,8 +24,9 @@ resource "azurerm_virtual_network" "main" {
 }
 
 resource "azurerm_subnet" "app" {
-  name                 = "${var.prefix}-app"
+  count = 3
+  name                 = "${var.prefix}-app${count.index}"
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.main.name
-  address_prefix     = var.subnet_app1
+  address_prefix     = "${var.subnet_app1}${count.index}"
 }
