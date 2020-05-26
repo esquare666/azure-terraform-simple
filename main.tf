@@ -7,13 +7,13 @@ provider "azurerm" {
 
 # Create a resource group
 resource "azurerm_resource_group" "main" {
-  name     = var.prefix
+  name     = "${var.prefix}-rg"
   location = var.azure_region
 }
 
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "main" {
-  name                = var.prefix
+  name                = "${var.prefix}-vnet"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   address_space       = var.cidrs
