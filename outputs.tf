@@ -3,7 +3,7 @@ output "Resource_Group_ID" {
   value       = azurerm_resource_group.main.id
 }
 
-output "ARN_App_Subnets" {
-  value       = azurerm_subnet.app[*].arn
+output "App_Subnets_ID" {
+  value       = azurerm_subnet.app[*].id
   description = "The ARNs for all subnets"
 }
