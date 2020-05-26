@@ -22,3 +22,10 @@ resource "azurerm_virtual_network" "main" {
         user_name = var.tag_user_name
   }
 }
+
+resource "azurerm_subnet" "app" {
+  name                 = var.prefix-app
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = ["192.168.0.0/24"]
+}
