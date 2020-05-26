@@ -8,6 +8,8 @@ variable "azure_region" {
   default = "australiaeast"
 }
 
+variable "cidrs" { default = [] }
+
 variable "tag_user_name" {
   type = string
   default = "Elayaraja Kathirvel"
