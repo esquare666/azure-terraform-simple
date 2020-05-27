@@ -20,3 +20,8 @@ esource "azurerm_network_security_group" "main" {
 	user_name = var.tag_user_name
   }
 }
+
+resource "azurerm_network_interface_security_group_association" "main" {
+  network_interface_id      = azurerm_network_interface.main.id
+  network_security_group_id = azurerm_network_security_group.main.id
+}
