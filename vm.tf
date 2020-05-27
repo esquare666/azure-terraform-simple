@@ -5,7 +5,7 @@ resource "azurerm_network_interface" "main" {
 
   ip_configuration {
     name                          = "${var.prefix}-ip"
-    subnet_id                     = "${var.prefix}-app0"
+    subnet_id                     = azurerm_subnet.app[0].id
     private_ip_address_allocation = "Dynamic"
   }
 }
