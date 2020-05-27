@@ -30,13 +30,13 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "${var.prefix}vm01"
+    name              = "azurerm_virtual_machine.main.name"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = "azurerm_virtual_machine.main.name"
+    computer_name  = "${var.prefix}vm01"
     admin_username = "azureadmin"
     admin_password = "Password1234!"
   }
