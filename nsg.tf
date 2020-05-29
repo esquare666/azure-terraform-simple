@@ -4,20 +4,20 @@ resource "azurerm_network_security_group" "app" {
   resource_group_name = azurerm_resource_group.main.name
 
   security_rule {
-    name                       = "${var.prefix}-app-ssh"
+    name                       = "${var.prefix}-app-rdp"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "22"
+    destination_port_range     = "3389"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
 
   tags = {
-    environment = "staging"
-	user_name = var.tag_user_name
+    environment = "training"
+    user_name = var.tag_user_name
   }
 }
 
