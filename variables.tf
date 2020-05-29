@@ -1,14 +1,13 @@
 variable "prefix" {
   type    = string
-  default = "esquare666"
 }
 
 variable "azure_region" {
   type    = string
-  default = "australiaeast"
+  default = "australiasoutheast"
 }
 
-variable "cidrs" { default = ["10.0.0.0/8"] }
+variable "cidrs" { default = ["10.0.0.0/16"] }
 
 variable "subnet_app" {
   description = "Application Subnets"
