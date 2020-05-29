@@ -1,5 +1,6 @@
 variable "prefix" {
   type    = string
+  default = "traninig"
 }
 
 variable "azure_region" {
