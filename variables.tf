@@ -1,6 +1,6 @@
 variable "prefix" {
   type    = string
-  default = "traninig"
+  default = "learnaz104"
 }
 
 variable "azure_region" {
@@ -19,4 +19,14 @@ variable "subnet_app" {
 variable "tag_user_name" {
   type = string
   default = "Elayaraja Kathirvel"
+}
+
+variable "tag_env" {
+  type = string
+  default = "training"
+}
+
+variable "tag_project" {
+  type = string
+  default = "AZ-104"
 }
