@@ -1,13 +1,14 @@
 provider "azurerm" {
   version = "~> 1.44"
 
-  subscription_id = "d52515da-685f-492c-8a14-0fdc40819e4f"
-  tenant_id       = "ecf8325f-91c3-4262-8fcf-8ca81cd0f45e"
+  #subscription_id = "d52515da-685f-492c-8a14-0fdc40819e4f"
+  #tenant_id       = "ecf8325f-91c3-4262-8fcf-8ca81cd0f45e"
+  # upddated using env var export ARM_SUBSCRIPTION_ID= and export ARM_TENANT_ID=
 }
 
 # Create a resource group
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-rg"
+  name     = "${var.prefix}-network"
   location = var.azure_region
 }
 
@@ -20,6 +21,8 @@ resource "azurerm_virtual_network" "main" {
   
    tags = {
         user_name = var.tag_user_name
+        env = var.tag_env
+        project=var.tag_project
   }
 }
 
